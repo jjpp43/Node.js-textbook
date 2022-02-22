@@ -1,0 +1,32 @@
+You will mostly come across asynchronous in js and node. especially when we use event listeners with callback functions.
+From ES2015, js and node's APIs has been reformed using Promises instead of callback functions.
+Promise is an object that we must know.
+
+Promise has the following rule.
+First, create a Promise object by using new Promise. and add callback functions with resolve and reject as its parameter.
+Now we can attach 'then' and 'catch' to our promise constant.
+When resolve is called within the promise, 'then' is executed. On the other hand, when reject is called, 'catch' is executed.
+
+const condition = true;
+const promise = new Promise((resolve, reject) => {
+    if(condition) {
+        resolve('success');
+    } else {
+        reject('failed');
+    }
+});
+
+promise
+    .then((message) => {
+        console.log(message);
+    })
+    .catch((error) => {
+        console.error(error);
+    })
+    .finally(() => {
+        console.log('must');
+    });
+
+To put it simple, promise is an obj that executes immediately, but returns the result later.
+You can get the result by 'then' or 'catch' method after our promise obj is executed.
+In the example code above, new Promise is immediately executed, but you get the result later only when we attach 'then.'
