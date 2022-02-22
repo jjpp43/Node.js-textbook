@@ -15,7 +15,7 @@ const promise = new Promise((resolve, reject) => {
         reject('failed');
     }
 });
-
+  
 promise
     .then((message) => {
         console.log(message);
@@ -30,3 +30,30 @@ promise
 To put it simple, promise is an obj that executes immediately, but returns the result later.
 You can get the result by 'then' or 'catch' method after our promise obj is executed.
 In the example code above, new Promise is immediately executed, but you get the result later only when we attach 'then.'
+
+You can also attach 'then' or 'catch' to another 'then' or 'catch
+by passing the previous 'then's value to the next 'then'
+
+promise
+    .then((message) => {
+        return new Promise((resolve, reject) => {
+            resolve(message);
+        });
+    })
+    .then((message2) => {
+        console.log(message2);
+        return new Promise((resolve, reject) => {
+            resolve(message2);
+        });
+    })
+    .then((message3) => {
+        console.log(message3);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+Remember, you must always return "new Promise" from the previous 'then' in order to pass it to the next 'then'.
+By using this technique, we can change callback into promises.
+Let's take a look at a example.
+
