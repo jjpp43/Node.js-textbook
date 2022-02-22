@@ -1,0 +1,46 @@
+function findAndSaveUser(Users) {
+    Users.findOne({})
+        .then((user) => {
+            user.name = 'zero';
+            return user.save();
+        })
+        .then((user) => {
+            return Users.findOne({gender : 'm'});
+        })
+        .then((user) => {
+            //skip
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
+
+This is the example code from promise.txt
+Even though we've escaped from callback hell, we still have continuous 'then's and 'catch'es.
+We can simplify our code by using async/await.
+
+async findAndSaveUser(Users) {
+    try {
+        const user = await Users.findOne({});
+        user.name = 'zero';
+        user = await user.save();
+        user = await Users.findOne({gender : 'm'});
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+Now when we use await, it moves on to the next logic only after when the promise is resolved. 
+for example, "user" is initialized once after await Users.findOne({}) is resolved.
+And we can handle our error by using try/catch.
+
+We can use async/await with a for loop to execute our promises in a given order.
+
+const promise1 = Promise.resolve('success1');
+const promise2 = Promise.resolve('success2');
+(async () => {
+    for await (promise of [promise1, promise2]) {
+        console.log(promise);
+    }
+})();
+
