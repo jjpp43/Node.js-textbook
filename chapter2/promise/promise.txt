@@ -57,3 +57,41 @@ Remember, you must always return "new Promise" from the previous 'then' in order
 By using this technique, we can change callback into promises.
 Let's take a look at a example.
 
+function findAndSaveUser(Users) {
+    Users.findOne({})
+        .then((user) => {
+            user.name = 'zero';
+            return user.save();
+        })
+        .then((user) => {
+            return Users.findOne({gender : 'm'});
+        })
+        .then((user) => {
+            //skip
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
+//Lets assume findOne and save has a promise obj
+
+Had we used callback, we should have handled error after each callback. 
+But now we can easily handle our error at 'catch'.
+
+You can also execute several promises at once by using "Promise.all"
+
+const promise1 = Promise.resolve('success1');
+const promise2 = Promise.resolve('success2');
+
+Promise.all([promise1, promise2])
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+
+
+When you have multiple promises and put it all into Promise.all, it waits for all the promises to be resolved and then move onto 'then.'
+The results of each promises are inside the "result" parameter in an array form.
+If any one of those promises reject, then it goes straight to 'catch.'
