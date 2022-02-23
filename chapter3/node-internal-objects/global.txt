@@ -1,0 +1,6 @@
+require function and console object should be global.require and global.console, but global is omitted.
+<timer functions>
+1. setTimeout(callback, milliseconds) : executes callback function after given milisecond.
+2. setInterval(callback, milliseconds) : Repeatedly executes the callback function every given milliseconds
+3. setImmediate(callback) : immediately executes the callback function.
+3.5내장모듈부터
