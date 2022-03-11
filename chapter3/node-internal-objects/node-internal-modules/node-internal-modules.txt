@@ -1,0 +1,26 @@
+<os>
+운영체제 정보
+os.arch() == process.arch()
+os.platform() == process.platform()
+os.type() 운영체제 종류
+os.uptime() 운영체제 부팅 이후 흐른 시간
+os.hostname() 컴퓨터 이름
+os.release() 운영체제 버전
+경로
+os.homedir() 홈 디렉토리 경로
+os.tmpdir() 임시 파일 저장 경로
+cpu정보
+os.cpus() 컴퓨터 코어 정보
+os.freemem() 사용 가능 메모리
+os.totalmem() 전체 메모리 용량
+
+<path>
+__filename == 현재 파일
+__dirname == 현재 폴더의 경로
+
+path.join() 여러 인수를 넣으면 하나의 경로로 합침. 
+path.resolve() join과 비슷하지만 좀 다름. /를 만나면 절대경로로 인식해서 앞의 경로를 무시함. 
+path.join('/a','/b','/c') -> 결과: /a/b/c/ 
+path.resolve('/a','/b','/c') -> 결과: /b/c
+
+<url>

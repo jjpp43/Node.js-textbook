@@ -1,0 +1,11 @@
+const fs = require('fs').promises;
+
+fs.readFile('./readme.txt')
+    .then((data) => {
+        console.log(data);  //readFile의 결과물은 버퍼 형식으로 제공되기 때문에 toString함수를 통해 문자열로 변환해주어야 한다. 
+        console.log(data.toString());
+    })
+    .catch((err) => {
+        console.error(err);
+    })
+    
