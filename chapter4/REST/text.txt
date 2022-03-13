@@ -1,0 +1,8 @@
+we distinguish our http requests by req.method. 
+if the req.method is GET, we again distinguish our request address (/, /about)
+
+res.end 앞에 return 붙이는 이유
+
+return 을 붙이지 않는 한 함수는 종료되지 않음. 따라서 다음에 코드가 이어지는 경우에는 return을 써서 명시적으로
+함수를 종료했음. return을 붙이지 않아서 res.end같은 메서드를 여러번 실행하게되면 
+Erorr: Can't send headers afer they are sent to the cliend 발생
