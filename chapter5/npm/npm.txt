@@ -1,3 +1,13 @@
 --save : dependencies에 패키지 이름을 추가하는 옵션이지만 npm@5부터 기본으로 설정되어 있으므로 안붙여도 됨.
 
 --save-dev : 개발용 패키지. devdependencies에 추가됨. 
+
+--global(-g) : node_modules에 설치하는 것이 아니라 npm이 설치되어 있는 폴더에 설치. 
+                global package는 package.json에 기록되지 않음.
+
+package version : x.x.x
+    첫번째 자리 : major버전. 하위 호환이 안될 정도로 패키지의 내용이 수정되었을 때 올림.  
+        0-초기개발중
+        1-정식버전
+    두번째 자리 : minor버전. 하위 호환이 되는 기능 업데이트를 했을 때 올림. 
+    세번째 자리 : patch버전. 간단한 버그 수정. 새로운 기능이 추가되었다기보다는 기존 기능에 문제가 있어서 수정한 것을 내놓았을 때 patch버전을 올림.
