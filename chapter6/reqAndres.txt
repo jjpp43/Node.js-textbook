@@ -1,0 +1,22 @@
+<req.>
+app: req객체를 통해 app 객체에 접근할 수 있다. req.app.get('port')처럼
+body: body-parser 미들웨어가 만드는 요청의 본문을 해석한 객체
+cookies: cookie-parser 미들웨어가 만드는 요청의 쿠키를 해석한 객체
+ip: 요청의 ip주소가 담겨있다.
+params: 라우트 매개변수에 대한 정체가 담긴 객체
+query: 쿼리스트링에 대한 정보가 담긴 객체
+signedCookies: 서명된 쿠키들은 req.cookies 대신 여기에 담겨있음.
+get(헤더이름): 헤더의 값을 가져오고 싶을 때 사용하는 메서드
+
+<res.>
+app: res객체를 통해 app객체에 접근할 수 있다.
+cookie(key, value, option): 쿠키를 설정하는 메서드
+clearCookie(key, value, option): 쿠키를 제거하는 메서드
+end(): 데이터 없이 응답을 보냄.
+json(JSON): json형식의 응답을 보냄.
+redirect(주소): 리다이렉트할 주소와 함께 응답을 보냄.
+render(view, data): 템플릿 엔진을 렌더링해서 응답할 때 사용하는 메서드
+send(data): data와 함께 응답을 보냄.
+sendFile(경로): 경로에 위치한 파일을 응답
+set(header, value): 응답의 헤더를 설정함.
+status(코드): 응답 시의 http 상태 코드를 지정함. 
