@@ -38,6 +38,12 @@ try {
     fs.mkdirSync('uploads');
 }
 
+/** multer 함수의 인수로 설정값들을 넣어준다.
+ * storage : 어디(destination)에 어떤 이름(filename)으로 저장할지 넣을 수 있음.
+ * req : 요청에 대한 정보 
+ * file : 업로드한 파일에 대한 정보
+ * req나 file의 데이터를 가공해서 done으로 넘기는 형식이다. 
+ */
 const upload = multer({
     storage: multer.diskStorage({
         destination(req, file, done) {
@@ -51,8 +57,18 @@ const upload = multer({
     limits: { fileSize: 5 * 1024 * 1024 },
 });
 /*************여기부터 계속 해 250p ******************/
-app.get('/upload')
-/*************************************************/
+app.get('/upload', (req, res) => {
+    res.sendFile(path.join(__dirname, 'multipart.html'));
+});
+
+app.post('/upload',
+    upload.fields([{ name: 'img1' }, { name: 'img2' }]),
+    (req, res) => {
+        console.log(req.files, req.body);
+        res.send('ok');
+    }
+);
+
 app.use((req, res, next) => {
     console.log('모든 요청에 다 실행됩니다.');
     next();
