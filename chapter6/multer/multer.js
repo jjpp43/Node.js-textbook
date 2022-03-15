@@ -28,6 +28,7 @@ app.use(session({
     name: 'session-cookie',
 }));
 
+/* multer 추가 */
 const multer = require('multer');
 const fs = require('fs');
 
@@ -38,7 +39,7 @@ try {
     fs.mkdirSync('uploads');
 }
 
-/** multer 함수의 인수로 설정값들을 넣어준다.
+/* multer 함수의 인수로 설정값들을 넣어준다.
  * storage : 어디(destination)에 어떤 이름(filename)으로 저장할지 넣을 수 있음.
  * req : 요청에 대한 정보 
  * file : 업로드한 파일에 대한 정보
@@ -56,7 +57,7 @@ const upload = multer({
     }),
     limits: { fileSize: 5 * 1024 * 1024 },
 });
-/*************여기부터 계속 해 250p ******************/
+
 app.get('/upload', (req, res) => {
     res.sendFile(path.join(__dirname, 'multipart.html'));
 });
