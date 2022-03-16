@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "http": "^0.0.1-security"
-  }
+  },
+  "name": "sns",
+  "description": "This repo is for personal study purposes.",
+  "version": "0.0.1",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/jjpp43/Node.js-textbook.git"
+  },
+  "author": "junna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjpp43/Node.js-textbook/issues"
+  },
+  "homepage": "https://github.com/jjpp43/Node.js-textbook#readme"
 }
