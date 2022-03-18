@@ -3,21 +3,21 @@
     "username": "root",
     "password": null,
     "database": "database_development",
-    "host": "https://jjpp43-nodejstextbook-uzy6tb2a3sl.ws-us38.gitpod.io",
+    "host": "https://4744-jjpp43-nodejstextbook-uzy6tb2a3sl.ws-us38.gitpod.io",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": null,
     "database": "database_test",
-    "host": "https://jjpp43-nodejstextbook-uzy6tb2a3sl.ws-us38.gitpod.io",
+    "host": "https://4744-jjpp43-nodejstextbook-uzy6tb2a3sl.ws-us38.gitpod.io",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "database_production",
-    "host": "https://jjpp43-nodejstextbook-uzy6tb2a3sl.ws-us38.gitpod.io",
+    "host": "https://4744-jjpp43-nodejstextbook-uzy6tb2a3sl.ws-us38.gitpod.io",
     "dialect": "mysql"
   }
 }
